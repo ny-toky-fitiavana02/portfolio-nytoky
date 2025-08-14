@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV — Ny Toky Fitiavana RIANJHARINELINA</title>
+  <meta name="description" content="Portfolio CV de Ny Toky Fitiavana RIANJHARINELINA — version sobre avec images discrètes et navigation par sections." />
+  <style>
+    :root{
+      --bg:#f7f7f7;            /* fond clair, neutre */
+      --card:#ffffff;          /* cartes */
+      --ink:#1f2937;           /* texte principal (gris anthracite) */
+      --muted:#6b7280;         /* texte secondaire */
+      --line:#e5e7eb;          /* séparateurs */
+      --accent:#0f172a10;      /* petite touche de contraste (très douce) */
+      --link:#1f2937;          /* liens (même teinte, soulignés au survol) */
+      --radius:16px;
+      --shadow:0 8px 24px rgba(0,0,0,.06);
+    }
+    html{scroll-behavior:smooth}
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      color:var(--ink); background:var(--bg); line-height:1.6;
+    }
+    /* Header / Nav */
+    header{
+      position:sticky; top:0; z-index:1000; background:rgba(255,255,255,.9); backdrop-filter:saturate(120%) blur(8px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{max-width:1080px; margin:auto; display:flex; align-items:center; justify-content:space-between; padding:14px 20px}
+    .brand{font-weight:700; letter-spacing:.3px}
+    nav a{color:var(--link); text-decoration:none; padding:8px 10px; border-radius:10px; font-weight:600; font-size:14px}
+    nav a:hover{background:var(--accent); text-decoration:underline}
+
+    /* Layout */
+    .wrap{max-width:1080px; margin:0 auto; padding:24px 20px}
+    section{padding:28px 0}
+    h2{font-size:26px; margin:0 0 14px; letter-spacing:.2px}
+    .subtitle{color:var(--muted); font-size:14px; margin-top:-6px}
+    .grid{display:grid; gap:18px}
+    @media(min-width:900px){.grid-2{grid-template-columns:1.1fr .9fr}}
+
+    /* Hero */
+    .hero{display:grid; gap:18px; grid-template-columns:1fr; align-items:center}
+    @media(min-width:900px){.hero{grid-template-columns:1.2fr .8fr}}
+    .hero-card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
+    .hero h1{font-size:34px; margin:0 0 6px}
+    .chip{display:inline-block; padding:6px 10px; border:1px solid var(--line); border-radius:999px; font-size:12px; color:var(--muted); margin-right:8px}
+    .list-inline{display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 0; padding:0; list-style:none}
+
+    /* Cards */
+    .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+    .card + .card{margin-top:12px}
+    .split{display:grid; grid-template-columns:90px 1fr; gap:16px; align-items:start}
+    @media(max-width:640px){.split{grid-template-columns:1fr}}
+    .thumb{width:100%; aspect-ratio:1/1; border-radius:12px; object-fit:cover; border:1px solid var(--line); background:#eee}
+
+    /* Lists */
+    .dl{display:grid; grid-template-columns:140px 1fr; gap:8px 18px}
+    .dl dt{color:var(--muted)} .dl dd{margin:0}
+
+    /* Footer */
+    footer{padding:50px 20px; color:var(--muted); text-align:center}
+
+    /* Subtle reveal animation */
+    .reveal{opacity:0; transform:translateY(12px); transition:opacity .6s ease, transform .6s ease}
+    .reveal.show{opacity:1; transform:none}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">Ny Toky Fitiavana RIANJHARINELINA</div>
+      <nav>
+        <a href="#presentation" aria-label="Aller à Présentation">Présentation</a>
+        <a href="#experience" aria-label="Aller à Expérience">Expérience</a>
+        <a href="#formation" aria-label="Aller à Formation">Formation</a>
+        <a href="#competences" aria-label="Aller à Compétences">Compétences</a>
+        <a href="#contact" aria-label="Aller à Contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO / PRESENTATION -->
+    <section id="presentation" class="reveal hero">
+      <div class="hero-card">
+        <h1>Ny Toky Fitiavana RIANJHARINELINA</h1>
+        <div class="subtitle">Service & relation client · Animation éducative et culturelle</div>
+        <p>
+          Né le <strong>30 septembre 2002</strong> (Itaosy). Licence en <strong>Anthropologie</strong> (Université d'Antananarivo).
+          Expérience confirmée en <strong>service en salle</strong>, <strong>accueil</strong>, <strong>polyvalence en brasserie</strong> et en <strong>animation pédagogique</strong> auprès d'enfants.
+        </p>
+        <ul class="list-inline">
+          <li class="chip">Permis A & B</li>
+          <li class="chip">Malagasy (natif)</li>
+          <li class="chip">Français (courant)</li>
+          <li class="chip">Anglais (intermédiaire)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2 style="margin-top:0">Points forts</h2>
+        <ul>
+          <li>Exécution rapide et soignée du service en salle, mémoire des commandes fiable.</li>
+          <li>Très bon relationnel client, sens de l'hospitalité et de la présentation.</li>
+          <li>Organisation, rigueur, travail en équipe et polyvalence dans les tâches.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="reveal">
+      <h2>Expériences professionnelles</h2>
+
+      <!-- Grand Café de la Gare Soarano -->
+      <article class="card split">
+        <img class="thumb" alt="Illustration d'une brasserie" 
+             src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=480&q=60" />
+        <div>
+          <h3 style="margin:0 0 6px">Serveur — Grand Café de la Gare Soarano</h3>
+          <div class="subtitle">Mai 2024 — Aujourd'hui · Antananarivo</div>
+          <ul>
+            <li>Accueil des clients, présentation de la carte, prise de commandes (plats & boissons).</li>
+            <li>Service rapide au plateau, coordination avec la cuisine et le bar.</li>
+            <li>Polyvalence brasserie : renfort à la réception, au comptoir, et tâches de commis si besoin.</li>
+            <li>Ouverture/fermeture : mise en place de la salle, dressage & redressage des tables, encaissement basique.</li>
+            <li>Suivi de la satisfaction : vérification régulière en salle, gestion des demandes particulières.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- École Primaire Française B Ampandrianomby -->
+      <article class="card split">
+        <img class="thumb" alt="Illustration d'une salle de classe" 
+             src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=480&q=60" />
+        <div>
+          <h3 style="margin:0 0 6px">Cantinier & Animateur — École Primaire Française B Ampandrianomby</h3>
+          <div class="subtitle">Octobre 2023 — Avril 2024 · Antananarivo</div>
+          <ul>
+            <li>Gestion des services de cantine : distribution, hygiène, rangement et suivi des effectifs.</li>
+            <li>Animation et surveillance des enfants durant les pauses, encadrement des activités calmes.</li>
+            <li>Appui éducatif basique : accompagnement et médiation pendant les temps périscolaires.</li>
+            <li>Communication avec l'équipe et les parents pour assurer sécurité et convivialité.</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Hôtel Mahatazana Ampitatafika -->
+      <article class="card split">
+        <img class="thumb" alt="Illustration d'un service en hôtel/restaurant" 
+             src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=480&q=60" />
+        <div>
+          <h3 style="margin:0 0 6px">Serveur — Hôtel Mahatazana (Ampitatafika)</h3>
+          <div class="subtitle">Novembre 2021 — Août 2023</div>
+          <ul>
+            <li>Mise en place : préparation de la salle, dressage soigné des tables et du matériel.</li>
+            <li>Prise de commandes à l'oral et sur carnet, transmission claire en cuisine.</li>
+            <li>Service à table, suivi des envois, débarrassage et redressage."></li>
+            <li>Rédaction des notes de restaurant, encaissements simples et clôtures de poste.</li>
+            <li>Application stricte des règles d'hygiène et de sécurité alimentaire (HACCP basique).</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- American Corner Antananarivo -->
+      <article class="card split">
+        <img class="thumb" alt="Illustration d'une activité d'anglais pour enfants" 
+             src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=480&q=60" />
+        <div>
+          <h3 style="margin:0 0 6px">Bénévole pédagogique — American Corner Antananarivo</h3>
+          <div class="subtitle">Mars 2020</div>
+          <ul>
+            <li>Initiation à l’anglais pour élèves du primaire : jeux de rôle, chansons, vocabulaire simple.</li>
+            <li>Animation culturelle et sportive de groupe dans un cadre bienveillant et sécurisé.</li>
+            <li>Appui à l'insertion : parrainage et accompagnement d'élèves dans leurs activités.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- FORMATION -->
+    <section id="formation" class="reveal">
+      <h2>Formation</h2>
+      <div class="card">
+        <dl class="dl">
+          <dt>2017 — 2021</dt><dd>Licence en <strong>Anthropologie</strong> — Université d'Antananarivo</dd>
+          <dt>2018</dt><dd>Baccalauréat <strong>Série C</strong></dd>
+          <dt>2016</dt><dd>Baccalauréat <strong>Série A2</strong></dd>
+          <dt>2018</dt><dd>Attestation <strong>Course Level 2 — English</strong></dd>
+          <dt>2020</dt><dd>Sayna Digital School — <strong>Bases de la programmation & développement web</strong></dd>
+          <dt>2020</dt><dd>Permis de conduire <strong>cat. A & B</strong></dd>
+        </dl>
+      </div>
+    </section>
+
+    <!-- COMPETENCES -->
+    <section id="competences" class="reveal">
+      <h2>Compétences & Qualités</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3 style="margin-top:0">Compétences</h3>
+          <ul>
+            <li>Service en salle (prise de commandes, port de plateaux, envoi, redressage).</li>
+            <li>Accueil & relation client, gestion de situations simples.</li>
+            <li>Notions d'encaissement et rédaction de notes de restaurant.</li>
+            <li>Animation d’enfants (activités calmes, sécurité, accompagnement).</li>
+            <li>Organisation du poste, hygiène & propreté (bonnes pratiques).</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Qualités</h3>
+          <ul>
+            <li>Autonomie, rigueur et sens des priorités.</li>
+            <li>Rapidité d’exécution et sens du détail.</li>
+            <li>Travail en équipe, communication claire.</li>
+            <li>Bonne mémoire et fiabilité.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="reveal">
+      <h2>Contact</h2>
+      <div class="card">
+        <dl class="dl">
+          <dt>Email</dt><dd><a href="mailto:nytokyfitiavanar@gmail.com" style="color:var(--link)">nytokyfitiavanar@gmail.com</a></dd>
+          <dt>Téléphone</dt><dd>+261 34 15 392 06</dd>
+          <dt>Adresse</dt><dd>Lot AV 410 Faliarivo II, Itaosy — Antananarivo, Madagascar</dd>
+          <dt>Papiers</dt><dd>CIN 117 121 023 852 (Ambavahaditokana) · Passeport A24X20491 (25/04/2024)</dd>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="y"></span> Ny Toky Fitiavana RIANJHARINELINA — Version sobre. 
+  </footer>
+
+  <script>
+    // Mise à jour année
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Révélation discrète au scroll
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('show'); })
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>
+
