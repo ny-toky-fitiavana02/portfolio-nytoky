@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio — Ny Toky Fitiavana R.</title>
+<meta name="description" content="Portfolio bilingue FR/EN — Restauration, hôtellerie, service client, animation éducative.">
+<style>
+  :root{
+    --bg:#0f172a;            /* fond header foncé */
+    --paper:#ffffff;         /* cartes */
+    --ink:#0b1220;           /* texte sombre */
+    --muted:#64748b;         /* texte secondaire */
+    --brand:#2e7d32;         /* vert chic */
+    --brand-2:#ffb300;       /* or/ambre */
+    --rose:#ef476f;          /* accent chaud */
+    --sky:#1d4ed8;           /* accent froid */
+    --ring: 0 10px 30px rgba(2,8,23,.15);
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family: ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial; color:var(--ink); background:#f8fafc}
+
+  /* HEADER (fixed) */
+  header{
+    position:fixed; inset:0 0 auto 0; z-index:1000;
+    background:linear-gradient(90deg,#0b1220,#13203a);
+    color:#e5e7eb; border-bottom:1px solid rgba(255,255,255,.08);
+    backdrop-filter:saturate(120%) blur(6px);
+  }
+  .nav{max-width:1180px; margin:auto; display:flex; align-items:center; justify-content:space-between; padding:12px 18px}
+  .brand{font-weight:800; letter-spacing:.2px}
+  .nav a{color:#e5e7eb; text-decoration:none; padding:8px 10px; border-radius:10px; font-weight:600; font-size:14px}
+  .nav a:hover{background:rgba(255,255,255,.08)}
+  .lang-switch{background:var(--brand-2); color:#111827; padding:8px 12px; border-radius:10px; font-weight:800}
+  .lang-switch:hover{filter:brightness(1.05)}
+  .ghost{height:60px} /* spacer under header */
+
+  /* HERO with parallax */
+  .hero{
+    position:relative; min-height:72vh; display:grid; place-items:center; text-align:center; color:#fff;
+    overflow:hidden; isolation:isolate;
+  }
+  .hero .bg{
+    position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+    transform:translateZ(0);
+    will-change:transform;
+  }
+  .hero::after{
+    content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,.55));
+  }
+  .hero .inner{position:relative; z-index:1; max-width:900px; padding:24px}
+  .hero h1{font-size:clamp(28px,5vw,44px); line-height:1.15; margin-bottom:10px}
+  .lead{opacity:.95; font-size:clamp(15px,2.2vw,18px)}
+  .cta{
+    display:inline-flex; gap:10px; margin-top:18px; flex-wrap:wrap; justify-content:center
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 16px; border-radius:12px; text-decoration:none; font-weight:800;
+    border:1px solid rgba(255,255,255,.18); transition:transform .2s ease, filter .2s ease;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--brand-2); color:#111827}
+  .btn-ghost{background:rgba(255,255,255,.08); color:#fff}
+
+  /* SECTIONS */
+  main{overflow:hidden}
+  section{padding:64px 20px}
+  .wrap{max-width:1180px; margin:0 auto}
+  h2{font-size:28px; letter-spacing:.2px; margin-bottom:16px; display:flex; align-items:center; gap:10px}
+  .kicker{color:var(--muted); font-size:14px; margin-bottom:18px}
+  .icon{
+    width:28px; height:28px; display:inline-grid; place-items:center; border-radius:10px;
+    background:linear-gradient(145deg,var(--brand),#38a169); color:#fff; font-weight:900
+  }
+
+  /* CARDS / GRIDS */
+  .grid-2{display:grid; grid-template-columns:1.1fr .9fr; gap:20px}
+  .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+  @media(max-width:900px){.grid-2{grid-template-columns:1fr}}
+  @media(max-width:800px){.grid-3{grid-template-columns:1fr}}
+
+  .card{
+    background:var(--paper); border:1px solid #e5e7eb; border-radius:var(--radius); box-shadow:var(--ring);
+    padding:18px; transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{transform:translateY(-3px); box-shadow:0 18px 48px rgba(2,8,23,.12)}
+  .tag{display:inline-block; font-size:12px; padding:6px 10px; border-radius:999px; background:#eef2ff; color:#1d4ed8; margin:2px}
+
+  /* DECOR backgrounds */
+  .band{
+    position:relative; border-radius:18px; overflow:hidden; isolation:isolate; border:1px solid #e5e7eb
+  }
+  .band .img{
+    position:absolute; inset:0;
+    background: center/cover no-repeat;
+    filter:saturate(1.05) contrast(1.05) brightness(.9);
+    transform:scale(1.05);
+  }
+  .band::after{
+    content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.95));
+  }
+  .band .content{position:relative; z-index:1; padding:22px}
+
+  /* EXPERIENCE timeline cards */
+  .xp{display:grid; grid-template-columns:64px 1fr; gap:16px; align-items:start}
+  @media(max-width:560px){.xp{grid-template-columns:1fr}}
+  .ico{
+    width:64px; height:64px; border-radius:14px; display:grid; place-items:center; color:#fff; font-size:28px;
+    background:linear-gradient(145deg,#1d4ed8,#60a5fa);
+  }
+  .ico.hot{background:linear-gradient(145deg,#ef4444,#f97316)}
+  .ico.green{background:linear-gradient(145deg,#22c55e,#16a34a)}
+  .subtitle{color:var(--muted); font-size:14px; margin:4px 0 10px}
+
+  /* SKILLS */
+  .skill{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:10px 0; border-bottom:1px dashed #e5e7eb}
+  .meter{flex:1; height:8px; border-radius:999px; background:#eef2f7; overflow:hidden}
+  .fill{height:100%; background:linear-gradient(90deg,var(--brand),#58cc7a)}
+
+  /* CONTACT */
+  .contact-card a{color:#1d4ed8; text-decoration:underline}
+
+  /* SCROLL REVEAL */
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease}
+  .reveal.show{opacity:1; transform:none}
+
+  /* LANG TRANSITION */
+  .lang-wrap{transition:opacity .35s ease, filter .35s ease}
+  .lang-wrap.fading{opacity:.05; filter:blur(2px)}
+
+  /* MOBILE NAV */
+  .menu-toggle{display:none}
+  @media(max-width:860px){
+    .nav-list{display:none; position:absolute; top:60px; right:10px; background:#0b1220; padding:10px; border-radius:12px; border:1px solid rgba(255,255,255,.08)}
+    .nav-list a{display:block}
+    .menu-toggle{display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border-radius:10px; background:rgba(255,255,255,.08); color:#fff; border:1px solid rgba(255,255,255,.1)}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">Ny Toky Fitiavana R.</div>
+    <nav>
+      <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+      <div class="nav-list" id="navList">
+        <a href="#about" data-fr="Présentation" data-en="About">Présentation</a>
+        <a href="#experience" data-fr="Expérience" data-en="Experience">Expérience</a>
+        <a href="#skills" data-fr="Compétences" data-en="Skills">Compétences</a>
+        <a href="#education" data-fr="Formation" data-en="Education">Formation</a>
+        <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
+        <a class="lang-switch" href="#" id="langBtn">EN</a>
+      </div>
+    </nav>
+  </div>
+</header>
+<div class="ghost"></div>
+
+<section class="hero">
+  <div class="bg" id="heroParallax"></div>
+  <div class="inner lang-wrap" id="langWrapHero">
+    <h1 data-fr="Professionnel polyvalent en restauration & accueil"
+        data-en="Versatile professional in hospitality & customer service">
+      Professionnel polyvalent en restauration & accueil
+    </h1>
+    <p class="lead"
+       data-fr="Offrir un service impeccable avec le sourire, pour une expérience client mémorable."
+       data-en="Delivering warm, impeccable service for a memorable guest experience.">
+      Offrir un service impeccable avec le sourire, pour une expérience client mémorable.
+    </p>
+    <div class="cta">
+      <a class="btn btn-primary" href="cv.pdf" download
+         data-fr="📄 Télécharger mon CV" data-en="📄 Download my CV">📄 Télécharger mon CV</a>
+      <a class="btn btn-ghost" href="#contact"
+         data-fr="Me contacter" data-en="Contact me">Me contacter</a>
+    </div>
+    <div style="margin-top:10px">
+      <span class="tag">Permis A & B</span>
+      <span class="tag" data-fr="Français (courant)" data-en="French (fluent)">Français (courant)</span>
+      <span class="tag" data-fr="Anglais (intermédiaire)" data-en="English (intermediate)">Anglais (intermédiaire)</span>
+    </div>
+  </div>
+</section>
+
+<main class="lang-wrap" id="langWrapMain">
+  <!-- ABOUT -->
+  <section id="about" class="reveal">
+    <div class="wrap grid-2">
+      <div class="band">
+        <div class="img" style="background-image:url('https://images.unsplash.com/photo-1555992336-cbfdf7e9c3f4?auto=format&fit=crop&w=1600&q=80')"></div>
+        <div class="content">
+          <h2><span class="icon">👋</span>
+            <span data-fr="Présentation" data-en="About">Présentation</span>
+          </h2>
+          <p class="kicker"
+             data-fr="Accueil chaleureux, attention au détail, sens du service."
+             data-en="Warm welcome, attention to detail, service mindset.">
+            Accueil chaleureux, attention au détail, sens du service.
+          </p>
+          <p id="aboutTxt"
+             data-fr="Passionné par le service client et l’hôtellerie, j’assure un service en salle rapide et précis, l’accueil des clients et la coordination d’activités éducatives/culturelles."
+             data-en="Passionate about hospitality and customer care, I handle fast, accurate table service, guest reception, and coordination of educational/cultural activities.">
+            Passionné par le service client et l’hôtellerie, j’assure un service en salle rapide et précis, l’accueil des clients et la coordination d’activités éducatives/culturelles.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 data-fr="Points forts" data-en="Key strengths">Points forts</h3>
+        <ul style="margin-top:8px; color:#0b1220">
+          <li data-fr="Service fluide, mémorisation des commandes, priorisation."
+              data-en="Smooth service, strong order memory, prioritization.">
+              Service fluide, mémorisation des commandes, priorisation.</li>
+          <li data-fr="Relation client, présentation, attitude positive."
+              data-en="Client relations, presentation, positive attitude.">
+              Relation client, présentation, attitude positive.</li>
+          <li data-fr="Fiable, ponctuel, esprit d’équipe, adaptable."
+              data-en="Reliable, punctual, team player, adaptable.">
+              Fiable, ponctuel, esprit d’équipe, adaptable.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="reveal">
+    <div class="wrap">
+      <h2><span class="icon">🍽️</span> <span data-fr="Expérience" data-en="Experience">Expérience</span></h2>
+      <p class="kicker"
+         data-fr="Mise en avant des missions clés et résultats."
+         data-en="Highlights of key duties and outcomes.">
+        Mise en avant des missions clés et résultats.
+      </p>
+
+      <div class="card xp">
+        <div class="ico hot">☕</div>
+        <div>
+          <strong data-fr="Serveur — Grand Café de la Gare Soarano"
+                  data-en="Waiter — Grand Café de la Gare Soarano">Serveur — Grand Café de la Gare Soarano</strong>
+          <div class="subtitle" data-fr="Mai 2024 — Présent · Antananarivo"
+               data-en="May 2024 — Present · Antananarivo">Mai 2024 — Présent · Antananarivo</div>
+          <ul>
+            <li data-fr="Accueil, présentation du menu, prise de commandes."
+                data-en="Greeting, menu presentation, order taking.">Accueil, présentation du menu, prise de commandes.</li>
+            <li data-fr="Service efficace des plats/boissons, nettoyage des tables."
+                data-en="Efficient food/drink service, clearing tables.">Service efficace des plats/boissons, nettoyage des tables.</li>
+            <li data-fr="Aide bar/réception, ouverture/fermeture, encaissement simple."
+                data-en="Bar/reception assistance, opening/closing, basic cashier.">Aide bar/réception, ouverture/fermeture, encaissement simple.</li>
+            <li data-fr="Satisfaction client suivie avec attention."
+                data-en="Attentive follow-up on guest satisfaction.">Satisfaction client suivie avec attention.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card xp">
+        <div class="ico green">🥗</div>
+        <div>
+          <strong data-fr="Aide cantinier & Animateur — EPFB (École Primaire Française B Ampandrianomby)"
+                  data-en="Canteen Assistant & Animator — EPFB (French Primary School B Ampandrianomby)">
+            Aide cantinier & Animateur — EPFB (École Primaire Française B Ampandrianomby)
+          </strong>
+          <div class="subtitle" data-fr="Oct 2023 — Avr 2024 · Antananarivo"
+               data-en="Oct 2023 — Apr 2024 · Antananarivo">Oct 2023 — Avr 2024 · Antananarivo</div>
+          <ul>
+            <li data-fr="Distribution des repas, hygiène et nettoyage."
+                data-en="Meal distribution, hygiene and clean-up.">Distribution des repas, hygiène et nettoyage.</li>
+            <li data-fr="Surveillance et activités calmes pour enfants."
+                data-en="Supervision and calm activities for children.">Surveillance et activités calmes pour enfants.</li>
+            <li data-fr="Formation HACCP appliquée à la restauration collective (EPFB)."
+                data-en="HACCP training applied to collective catering (EPFB).">Formation HACCP appliquée à la restauration collective (EPFB).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card xp">
+        <div class="ico">🏨</div>
+        <div>
+          <strong data-fr="Serveur — Hôtel Mahatazana (Ampitatafika)"
+                  data-en="Waiter — Hôtel Mahatazana (Ampitatafika)">Serveur — Hôtel Mahatazana (Ampitatafika)</strong>
+          <div class="subtitle" data-fr="Nov 2021 — Août 2023"
+               data-en="Nov 2021 — Aug 2023">Nov 2021 — Août 2023</div>
+          <ul>
+            <li data-fr="Mise en place salle/tables et service complet."
+                data-en="Dining room setup and full service.">Mise en place salle/tables et service complet.</li>
+            <li data-fr="Transmission claire des commandes en cuisine."
+                data-en="Clear hand-over of orders to kitchen.">Transmission claire des commandes en cuisine.</li>
+            <li data-fr="Facturation simple, respect des normes d’hygiène."
+                data-en="Basic billing, adherence to hygiene standards.">Facturation simple, respect des normes d’hygiène.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="reveal">
+    <div class="wrap grid-2">
+      <div class="band">
+        <div class="img" style="background-image:url('https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=1600&q=80')"></div>
+        <div class="content">
+          <h2><span class="icon">🛠️</span> <span data-fr="Compétences" data-en="Skills">Compétences</span></h2>
+          <div class="skill">
+            <span data-fr="Service en salle & accueil" data-en="Table service & reception">Service en salle & accueil</span>
+            <div class="meter"><div class="fill" style="width:92%"></div></div>
+          </div>
+          <div class="skill">
+            <span data-fr="Relation client & présentation" data-en="Guest relations & presentation">Relation client & présentation</span>
+            <div class="meter"><div class="fill" style="width:90%"></div></div>
+          </div>
+          <div class="skill">
+            <span data-fr="Encaissement & facturation simple" data-en="Cash handling & basic billing">Encaissement & facturation simple</span>
+            <div class="meter"><div class="fill" style="width:82%"></div></div>
+          </div>
+          <div class="skill">
+            <span data-fr="Animation d’activités enfants" data-en="Children’s activity facilitation">Animation d’activités enfants</span>
+            <div class="meter"><div class="fill" style="width:85%"></div></div>
+          </div>
+          <div class="skill">
+            <span data-fr="Hygiène & sécurité (HACCP)" data-en="Hygiene & safety (HACCP)">Hygiène & sécurité (HACCP)</span>
+            <div class="meter"><div class="fill" style="width:88%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 data-fr="Qualités" data-en="Qualities">Qualités</h3>
+        <ul style="margin-top:8px">
+          <li data-fr="Autonome, fiable, ponctuel."
+              data-en="Autonomous, reliable, punctual.">Autonome, fiable, ponctuel.</li>
+          <li data-fr="Esprit d’équipe, communication claire."
+              data-en="Team spirit, clear communication.">Esprit d’équipe, communication claire.</li>
+          <li data-fr="Rapidité d’exécution et sens du détail."
+              data-en="Fast execution and attention to detail.">Rapidité d’exécution et sens du détail.</li>
+          <li data-fr="Adaptabilité et gestion des priorités."
+              data-en="Adaptability and priority management.">Adaptabilité et gestion des priorités.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="reveal">
+    <div class="wrap">
+      <h2><span class="icon">🎓</span> <span data-fr="Formation" data-en="Education">Formation</span></h2>
+      <div class="grid-3">
+        <div class="card">
+          <strong data-fr="Licence Anthropologie — Université d’Antananarivo"
+                  data-en="B.A. Anthropology — University of Antananarivo">Licence Anthropologie — Université d’Antananarivo</strong>
+          <div class="subtitle">2017 — 2021</div>
+        </div>
+        <div class="card">
+          <strong data-fr="Baccalauréat Série C" data-en="High School Diploma — Series C">Baccalauréat Série C</strong>
+          <div class="subtitle">2018</div>
+        </div>
+        <div class="card">
+          <strong data-fr="Certificat Anglais Niveau 2" data-en="English Certificate — Level 2">Certificat Anglais Niveau 2</strong>
+          <div class="subtitle">2018</div>
+        </div>
+        <div class="card">
+          <strong data-fr="Sayna Digital School — Bases Programmation & Web"
+                  data-en="Sayna Digital School — Programming & Web basics">Sayna Digital School — Bases Programmation & Web</strong>
+          <div class="subtitle">2020</div>
+        </div>
+        <div class="card">
+          <strong data-fr="Permis de conduire A & B" data-en="Driving License A & B">Permis de conduire A & B</strong>
+          <div class="subtitle">2020</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="reveal">
+    <div class="wrap grid-2">
+      <div class="card contact-card">
+        <h2><span class="icon">📬</span> <span data-fr="Contact" data-en="Contact">Contact</span></h2>
+        <dl style="display:grid; grid-template-columns:140px 1fr; gap:8px 18px">
+          <dt>Email</dt><dd><a href="mailto:nytokyfitiavanar@gmail.com">nytokyfitiavanar@gmail.com</a></dd>
+          <dt data-fr="Téléphone" data-en="Phone">Téléphone</dt><dd>+261 34 15 392 06</dd>
+          <dt data-fr="Adresse" data-en="Address">Adresse</dt><dd>Lot AV 410 Faliarivo II, Itaosy — Antananarivo</dd>
+        </dl>
+      </div>
+      <div class="band">
+        <div class="img" style="background-image:url('https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1600&q=80')"></div>
+        <div class="content">
+          <h3 data-fr="Disponible immédiatement" data-en="Available immediately">Disponible immédiatement</h3>
+          <p class="kicker" data-fr="Antananarivo & environs — Mobilité OK"
+             data-en="Antananarivo & area — Mobile and flexible">
+             Antananarivo & environs — Mobilité OK
+          </p>
+          <a class="btn btn-primary" href="#about" data-fr="Voir mon profil" data-en="View my profile">Voir mon profil</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer style="text-align:center; padding:30px 16px; color:#94a3b8; background:#0b1220">
+  © <span id="y"></span> Ny Toky Fitiavana R. — <span data-fr="Portfolio bilingue" data-en="Bilingual portfolio">Portfolio bilingue</span>.
+</footer>
+
+<script>
+  // Year
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Mobile menu
+  function toggleMenu(){
+    const n = document.getElementById('navList');
+    n.style.display = (n.style.display==='block'?'':'block');
+  }
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} })
+  },{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Simple parallax (hero)
+  const heroBg = document.getElementById('heroParallax');
+  window.addEventListener('scroll', ()=>{
+    const y = window.scrollY * 0.35;
+    heroBg.style.transform = `translateY(${y}px) scale(1.08)`;
+  }, {passive:true});
+
+  // Lang switch with fade transition
+  let lang = 'fr';
+  const langBtn = document.getElementById('langBtn');
+  const langWraps = [document.getElementById('langWrapHero'), document.getElementById('langWrapMain')];
+
+  function setLang(next){
+    lang = next;
+    langBtn.textContent = lang==='fr' ? 'EN' : 'FR';
+
+    // Start fade
+    langWraps.forEach(w=>w.classList.add('fading'));
+    setTimeout(()=>{
+      // Update all data-fr / data-en
+      document.querySelectorAll('[data-fr]').forEach(el=>{
+        el.textContent = el.getAttribute(`data-${lang}`);
+      });
+      // End fade
+      langWraps.forEach(w=>w.classList.remove('fading'));
+    }, 280);
+  }
+  langBtn.addEventListener('click', (e)=>{ e.preventDefault(); setLang(lang==='fr'?'en':'fr'); });
+
+  // Also translate attributes inside CTA buttons already set via data attributes (handled above)
+
+</script>
+</body>
+</html>
