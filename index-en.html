@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV — Ny Toky Fitiavana RIANJHARINELINA</title>
+  <meta name="description" content="Professional portfolio — Ny Toky Fitiavana RIANJHARINELINA: customer service, hospitality, education and cultural animation." />
+  <style>
+    :root{
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --ink:#0f172a;
+      --muted:#64748b;
+      --line:#e5e7eb;
+      --prim:#f97361; /* coral */
+      --brand1:#1e3a8a; /* dark blue */
+      --brand2:#2563eb; /* electric blue */
+      --radius:18px;
+      --shadow:0 10px 30px rgba(2,8,23,.08);
+    }
+    html{scroll-behavior:smooth}
+    *{box-sizing:border-box}
+    body{margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif; color:var(--ink); background:var(--bg); line-height:1.65}
+    header{
+      position:sticky; top:0; z-index:1000;
+      background: linear-gradient(90deg, var(--brand1), var(--brand2));
+      transition: background .3s ease, box-shadow .3s ease;
+    }
+    header.scrolled{
+      box-shadow:0 4px 20px rgba(0,0,0,.1);
+      background: linear-gradient(90deg, var(--brand1), #173278);
+    }
+    .nav{max-width:1080px; margin:auto; display:flex; align-items:center; justify-content:space-between; padding:14px 20px; color:#fff}
+    .brand{font-weight:800; letter-spacing:.3px}
+    nav a{color:#e5e7eb; text-decoration:none; padding:8px 10px; border-radius:10px; font-weight:600; font-size:14px}
+    nav a:hover{background:rgba(255,255,255,.08); color:#fff}
+    .lang-switch{background:var(--prim); color:#fff; padding:6px 10px; border-radius:8px; font-size:13px; text-decoration:none; font-weight:700}
+    .wrap{max-width:1080px; margin:0 auto; padding:24px 20px}
+    section{padding:30px 0}
+    h2{font-size:28px; margin:0 0 14px; letter-spacing:.2px; position:relative}
+    h2::after{content:""; position:absolute; left:0; bottom:-6px; width:80px; height:3px; background:linear-gradient(90deg,var(--prim),transparent)}
+    .subtitle{color:var(--muted); font-size:14px; margin-top:-6px}
+    .hero{display:grid; gap:22px; grid-template-columns:1fr; align-items:center}
+    @media(min-width:900px){.hero{grid-template-columns:1.1fr .9fr}}
+    .hero-card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
+    .hero h1{font-size:36px; margin:0 0 8px}
+    .tag{display:inline-block; padding:6px 10px; border:1px solid var(--line); border-radius:999px; font-size:12px; color:var(--muted); margin-right:8px}
+    .avatar{
+      width:180px; height:180px; border-radius:50%; display:block;
+      background:linear-gradient(135deg,var(--brand2),var(--prim));
+      display:flex; align-items:center; justify-content:center; color:#fff; font-size:72px; font-weight:700;
+      box-shadow:0 10px 30px rgba(2,8,23,.12);
+    }
+    .photo-wrap{display:flex; align-items:center; gap:18px}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:12px; background:var(--prim); color:#fff; text-decoration:none; font-weight:700}
+    .btn:hover{filter:brightness(1.05)}
+    .card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); transition: transform .25s ease, box-shadow .25s ease}
+    .card:hover{transform:translateY(-2px) scale(1.01); box-shadow:0 16px 40px rgba(2,8,23,.12)}
+    .split{display:grid; grid-template-columns:60px 1fr; gap:16px; align-items:start}
+    @media(max-width:640px){.split{grid-template-columns:1fr}}
+    .icon-box{width:60px; height:60px; border-radius:14px; background:var(--brand2); display:flex; align-items:center; justify-content:center; color:#fff; font-size:28px}
+    .dl{display:grid; grid-template-columns:140px 1fr; gap:8px 18px}
+    .dl dt{color:var(--muted)} .dl dd{margin:0}
+    footer{padding:50px 20px; color:#fff; text-align:center; background:linear-gradient(90deg, var(--brand1), var(--brand2))}
+    @keyframes rise { from {opacity:0; transform: translateY(20px)} to {opacity:1; transform:none} }
+    .reveal{opacity:0; transform:translateY(20px)}
+    .reveal.show{animation: rise .6s ease forwards}
+  </style>
+</head>
+<body>
+  <header id="hdr">
+    <div class="nav">
+      <div class="brand">Ny Toky Fitiavana RIANJHARINELINA</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a class="lang-switch" href="index.html">FR</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="about" class="reveal hero">
+      <div class="hero-card">
+        <div class="photo-wrap">
+          <div class="avatar">NT</div>
+          <div>
+            <h1>Ny Toky Fitiavana RIANJHARINELINA</h1>
+            <p><strong>Versatile professional in customer service and hospitality</strong>, passionate about educational and cultural activities, combining attention to detail, organization, and a warm approach.</p>
+            <div>
+              <span class="tag">Driving License A & B</span>
+              <span class="tag">Malagasy (native)</span>
+              <span class="tag">French (fluent)</span>
+              <span class="tag">English (intermediate)</span>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:14px">
+          <a class="btn" href="cv-en.pdf" download>📄 Download CV (PDF)</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2 style="margin-top:0">Key Strengths</h2>
+        <ul>
+          <li>Fast and accurate table service with excellent memory for orders.</li>
+          <li>Strong client relations, hospitality, and presentation skills.</li>
+          <li>Organized, reliable, team-oriented, and adaptable.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="experience" class="reveal">
+      <h2>Professional Experience</h2>
+
+      <article class="card split">
+        <div class="icon-box">☕</div>
+        <div>
+          <h3>Waiter — Grand Café de la Gare Soarano</h3>
+          <div class="subtitle">May 2024 — Present · Antananarivo</div>
+          <ul>
+            <li>Welcomed guests, presented menu, took orders.</li>
+            <li>Served food and beverages efficiently.</li>
+            <li>Performed multiple roles including reception and bar assistance.</li>
+            <li>Managed opening/closing duties and basic cashier operations.</li>
+            <li>Ensured customer satisfaction through attentive service.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card split">
+        <div class="icon-box">🍽️</div>
+        <div>
+          <h3>Canteen Assistant & Animator — École Primaire Française B Ampandrianomby</h3>
+          <div class="subtitle">Oct 2023 — Apr 2024 · Antananarivo</div>
+          <ul>
+            <li>Handled meal distribution, hygiene, and clean-up.</li>
+            <li>Supervised children during breaks, organized calm activities.</li>
+            <li>Provided basic educational support during extracurricular periods.</li>
+            <li>Maintained communication with staff and parents.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card split">
+        <div class="icon-box">🏨</div>
+        <div>
+          <h3>Waiter — Hôtel Mahatazana (Ampitatafika)</h3>
+          <div class="subtitle">Nov 2021 — Aug 2023</div>
+          <ul>
+            <li>Prepared dining area and tables before service.</li>
+            <li>Took and transmitted orders clearly to the kitchen.</li>
+            <li>Served meals, cleared tables, and reset settings.</li>
+            <li>Issued restaurant bills and handled basic payments.</li>
+            <li>Applied hygiene and food safety standards.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card split">
+        <div class="icon-box">🌍</div>
+        <div>
+          <h3>Volunteer — American Corner Antananarivo</h3>
+          <div class="subtitle">Mar 2020</div>
+          <ul>
+            <li>Introduced English to primary school children through games and songs.</li>
+            <li>Organized cultural and sports activities in a safe environment.</li>
+            <li>Mentored and supported children in group activities.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section id="education" class="reveal">
+      <h2>Education</h2>
+      <div class="card">
+        <dl class="dl">
+          <dt>2017 — 2021</dt><dd>Bachelor’s in <strong>Anthropology</strong> — University of Antananarivo</dd>
+          <dt>2018</dt><dd>High School Diploma <strong>Science C</strong></dd>
+          <dt>2016</dt><dd>High School Diploma <strong>Arts A2</strong></dd>
+          <dt>2018</dt><dd>Certificate <strong>Course Level 2 — English</strong></dd>
+          <dt>2020</dt><dd>Sayna Digital School — <strong>Basics of Programming & Web Development</strong></dd>
+          <dt>2020</dt><dd>Driving License <strong>Cat. A & B</strong></dd>
+        </dl>
+      </div>
+    </section>
+
+    <section id="skills" class="reveal">
+      <h2>Skills & Qualities</h2>
+      <div class="card" style="margin-bottom:14px">
+        <h3>Skills</h3>
+        <ul>
+          <li>Table service, order taking, and food delivery.</li>
+          <li>Customer reception and relationship management.</li>
+          <li>Basic cashier and bill writing.</li>
+          <li>Children’s activity supervision.</li>
+          <li>Workplace organization and hygiene.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Qualities</h3>
+        <ul>
+          <li>Autonomous, organized, and priority-focused.</li>
+          <li>Fast execution with attention to detail.</li>
+          <li>Teamwork and clear communication.</li>
+          <li>Good memory and reliability.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="reveal">
+      <h2>Contact</h2>
+      <div class="card">
+        <dl class="dl">
+          <dt>Email</dt><dd><a href="mailto:nytokyfitiavanar@gmail.com" style="color:var(--brand2); text-decoration:underline">nytokyfitiavanar@gmail.com</a></dd>
+          <dt>Phone</dt><dd>+261 34 15 392 06</dd>
+          <dt>Address</dt><dd>Lot AV 410 Faliarivo II, Itaosy — Antananarivo, Madagascar</dd>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="y"></span> Ny Toky Fitiavana RIANJHARINELINA — Portfolio.
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('show'); })
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    const hdr = document.getElementById('hdr');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 20) hdr.classList.add('scrolled');
+      else hdr.classList.remove('scrolled');
+    });
+  </script>
+</body>
+</html>
